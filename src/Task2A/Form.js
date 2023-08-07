@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Form.css';
+// import './Form.css';
 
 const ContactForm = () => {
   const [contactType, setContactType] = useState('');
@@ -13,33 +13,33 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form">
-      <div className="form-container">
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="firstName">First Name</label><br></br>
-            <input
-              type="text"
-              id="firstName"
-              value={firstName}
-              onChange={(event) => setFirstName(event.target.value)}
-            />
-          </div>
-          <div className="form-group1">
-            <label htmlFor="lastName">Last Name</label><br></br>
-            <input
-              type="text"
-              id="lastName"
-              value={lastName}
-              onChange={(event) => setLastName(event.target.value)}
-            />
-          </div>
+      <div className="container  mt-5  bg-light">
+        <div className='card'>
+        <div className='card-body'>
+        <div className="row mt-4">
+            <div className="form-group col-sm-6 ">
+                              <label for="inputFirstName">First Name</label>
+                              <input type="FirstName"
+                               class="form-control" 
+                               id="inputFirstName"
+                                value={firstName}
+                               onChange={(event) => setFirstName(event.target.value)}
+                                />
+            </div>
+            <div className="form-group col-sm-6 ">
+                              <label for="inputLastName">Last Name</label>
+                              <input type="FirstName"
+                               class="form-control" 
+                               id="inputLastName"
+                                value={lastName}
+                               onChange={(event) => setLastName(event.target.value)}
+                                />
+            </div>
         </div>
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="contactType">How should we contact you?</label><br></br>
-            <select
-              id="contactType"
+        <div className="row mt-4">
+        <div className="form-group col-sm-6">
+            <label For="inputType">How should we contact you?</label><br></br>
+            <select  id="inputType" className="form-control"
               value={contactType}
               onChange={handleContactTypeChange}
             >
@@ -48,31 +48,34 @@ const ContactForm = () => {
               <option value="email">Email</option>
             </select>
           </div>
+          <div className="form-group col-sm-6">
           {contactType === 'phone' && (
             <div className="form-group1">
-              <label htmlFor="phone">Phone Number</label><br></br>
-              <input
+              <label For="inputType">Phone Number</label><br></br>
+              <input className='form-control'
                 type="text"
-                id="phone"
+                id="inputType"
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
               />
             </div>
           )}
           {contactType === 'email' && (
-            <div className="form-group1">
-              <label htmlFor="email">Email Address</label><br></br>
-              <input
+            <div className="">
+              <label For="inputemail">Email Address</label><br></br>
+              <input className='form-control'
                 type="email"
-                id="email"
+                id="Inputemail"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
             </div>
           )}
         </div>
+        </div>
+        </div>
+        </div>
       </div>
-    </div>
   );
 };
 
